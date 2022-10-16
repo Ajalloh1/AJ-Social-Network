@@ -56,3 +56,44 @@ const thoughtController = {
   },
 
   //update thought by id
+
+  putThought(req, res) {
+    Thought.findOneAndUpdate(
+      { _id: req.params.thoughtId },
+      { $set: req.body },
+      { runValidators: true, context: 'query', new: true }
+    )
+      .then((thought) =>
+        !thought
+          ? res
+              .status(404)
+              .json({ message: "Thought ID is invalid." })
+          : res.status(200).json(thought)
+      )
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  },
+
+  //delete thought //
+  deleteReaction(req, res) {
+    Thought.findOneAndUpdate(
+      { _id: req.params.thoughtId },
+      { $pull: { reactions: { _id: req.params.reactionId } } }
+    )
+      .then((thought) =>
+        !thought
+          ? res
+              .status(404)
+              .json({ message: "Thought ID doesn't exist or is invalid." })
+          : res.status(200).json({
+              message: `Succesfully deleted Reaction ${req.params.userId}.`,
+            })
+      )
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  },
+};
