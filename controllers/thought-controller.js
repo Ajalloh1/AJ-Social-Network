@@ -33,4 +33,26 @@ const thoughtController = {
       });
   },
   // Create thoughts///
-  
+  createThought({ body }, res) {
+    console.log(body);
+    Thought.create(body)
+      .then((thoughtData) => {
+        return User.findOneAndUpdate(
+          { _id: body.userId },
+          { $push: { thoughts: thoughtData._id } },
+          { new: true }
+        );
+      })
+      .then((dbUserData) => {
+        if (!dbUserData) {
+          res
+            .status(404)
+            .json({ message: "user ID is invalide." });
+          return;
+        }
+        res.json(dbUserData);
+      })
+      .catch((err) => res.json(err));
+  },
+
+  //update thought by id
