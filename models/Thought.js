@@ -16,7 +16,7 @@ const messageSchema = new Schema(
         type: Date,
         default: Date.now,
         get: (date) => {
-          return new Intl.DateTimeFormat('en-US', {
+          return new Intl.DateFormat('en-US', {
             dateStyle: 'full',
             timeStyle: 'short',
           }).format(date);
