@@ -26,3 +26,15 @@ const reactionSchema = new Schema(
       type: String,
       required: true,
     },
+    oJSON: {
+      getters: true,
+    },
+  }
+);
+const thoughtSchema = new Schema(
+  {
+    thoughtText: {
+      type: String,
+      required: true,
+      maxlength: 280,
+    },
