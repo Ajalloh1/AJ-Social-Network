@@ -72,4 +72,8 @@ updateUser({ params, body }, res) {
   },
 };
 
+//add addFriend code//
+
+//add removeFriend code
+
 module.exports = userController;

@@ -77,7 +77,7 @@ const thoughtController = {
   },
 
   //delete thought //
-  deleteReaction(req, res) {
+  deleteThought(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
       { $pull: { reactions: { _id: req.params.reactionId } } }
@@ -97,3 +97,5 @@ const thoughtController = {
       });
   },
 };
+
+module.exports = thoughtController;
