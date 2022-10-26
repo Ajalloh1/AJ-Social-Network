@@ -12,7 +12,7 @@ const {
 router.route('/').get(getAllThoughts).post(createThought);
 
 // api user: get, delete and put//
-router.route('/:thoughtId').get(getThought).put(putThought).delete(deleteThought);
+router.route('/:thoughtid').get(getThought).put(putThought).delete(deleteThought);
 
 // /api/ friends id//
 // router

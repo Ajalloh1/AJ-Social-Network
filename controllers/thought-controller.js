@@ -47,7 +47,7 @@ const thoughtController = {
         if (!dbUserData) {
           res
             .status(404)
-            .json({ message: "user ID is invalide." });
+            .json({ message: "user id is invalide." });
           return;
         }
         res.json(dbUserData);
@@ -67,7 +67,7 @@ const thoughtController = {
         !thought
           ? res
               .status(404)
-              .json({ message: "Thought ID is invalid." })
+              .json({ message: "Thought id is invalid." })
           : res.status(200).json(thought)
       )
       .catch((err) => {
@@ -86,7 +86,7 @@ const thoughtController = {
         !thought
           ? res
               .status(404)
-              .json({ message: "Thought ID doesn't exist or is invalid." })
+              .json({ message: "Thought id doesn't exist or is invalid." })
           : res.status(200).json({
               message: `Succesfully deleted Reaction ${req.params.userId}.`,
             })
