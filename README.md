@@ -4,7 +4,9 @@ Challenge 18, a social networking API app using MongoDB.
 
 ## Mock Up
 
-![image](./assets/)
+![image](./assets/Screen%20Shot%202022-10-30%20at%2012.36.20%20PM.png)
+
+![image](./assets/Screen%20Shot%202022-10-30%20at%2012.32.24%20PM.png)
 
 This is my completed code for the Module 18 challenge this week. We were given a task this week to build an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list.
 
